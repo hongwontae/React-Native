@@ -10,6 +10,8 @@
 APP.js 파일 내의 APP 컴포넌트는 앱에 렌더링 되는 루트 컴포넌트이다.
 => SPA이기 떄문에 APP의 최종 root인 트리 형태를 갖춰야 한다.
 
+=> Ios, android는 Web이 아니기 떄문에 기존의 HTML, CSS을 사용할 수 없다. native만의 방식을 사용해야 한다.
+
 
 2. Core Components
 2-1. View tag => 컨텐츠를 담는 상자나 컨테이너 구축에 사용되는 tag
@@ -23,7 +25,31 @@ APP.js 파일 내의 APP 컴포넌트는 앱에 렌더링 되는 루트 컴포�
 3. Native Styling
 Native 프로젝트는 웹을 target하여 UI를 개발하는 것이 아니라 안드로이드, ios를 기준으로 개발하는 것이다.
 
-
 3-1. inline Styling 
 => 몇몇 컴포넌트들은 style이라는 프로퍼티를 가지고 있다. style 프로퍼티에 css 객체를 주면 적용된다.
+
+3-2. StyleSheet object
+=> 해당 객체를 사용하면 자동완성이나 코드 검증을 해주기 때문에 편리하다.
+react-native package에서 StyleSheet 객체를 import => StyleSheet.create 메서드 호출 => 인수로 객체를 받는다.
+=> CSS 프로퍼티를 작성 => core-components의 styles에 할당
+=> 숫자는 그냥 사용해도 되지만 나머지 값들은 ''("")에 묶어서 사용해야 한다.
+
+
+4. Native flex
+4-1. view tag는 flex를 자동으로 사용한다. (자식들의 배치는 column)
+4-2. flex property => flex : n(n만큼 공간을 차지한다. 부모가 1, 자식1이 1, 자식2가 4면 자식 1은 1/5을 
+갖고 자식 2는 4/5를 갖는다.)
+4-3. 나머지는 css flex와 같다.
+
+
+5. Native Event
+5-1. TextInput tag는 onChangeText 이벤트 리스너 속성을 통해 입력값을 받아올 수 있다. 이 떄 연결된 함수에게
+자동으로 입력값을 전달해준다.
+
+5-2. Button tag는 onPress === onClick
+
+5-3. React Event 처리와 동일하다. => 이전 값에 기대어 처리하는 경우 setFunc의 콜백함수처리
+
+
+
 
