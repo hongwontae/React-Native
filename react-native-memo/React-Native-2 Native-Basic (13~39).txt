@@ -24,6 +24,7 @@ APP.js 파일 내의 APP 컴포넌트는 앱에 렌더링 되는 루트 컴포�
 
 3. Native Styling
 Native 프로젝트는 웹을 target하여 UI를 개발하는 것이 아니라 안드로이드, ios를 기준으로 개발하는 것이다.
+스타일 상속이 없다.
 
 3-1. inline Styling 
 => 몇몇 컴포넌트들은 style이라는 프로퍼티를 가지고 있다. style 프로퍼티에 css 객체를 주면 적용된다.
@@ -49,6 +50,55 @@ react-native package에서 StyleSheet 객체를 import => StyleSheet.create 메�
 5-2. Button tag는 onPress === onClick
 
 5-3. React Event 처리와 동일하다. => 이전 값에 기대어 처리하는 경우 setFunc의 콜백함수처리
+
+
+6. ios vs android 스타일링의 차이점
+React-Native의 장점은 여러 분할 코드를 작성하지 않고 여러 플랫폼에서 앱이 돌아가게 하는 것이다.
+그러나 ios와 android의 특성에 따라 분할 코드를 작성할 필요도 있다.
+
+borderRadius의 경우 Text tag에 styles로 적용하게 되면 ios의 경우 무시된다.
+=> ios라 그런것이다.
+=> 공식문서를 확인하거나 래퍼 컴포넌트로 감싸면 해결된다.
+
+
+7. ScrollView
+ScrollView tag는 해당 영역에서 요소들이 height을 넘어가면 스크롤 효과를 주는 core-component이다.
+
+7-1. ScrollView는 flex로 공간을 차지할 떄 움직임이 다르기 떄문에 view로 감싸서 flex처리를 해야한다.
+7-2. ScrollView는 IOS나 android에 따라 사용할 수 있는 프로퍼티나 default 값이 다르기 떄문에 개발시 고려해야 한다.
+7-3. ScrollView는 모든 자식 항목을 렌더링한다. (모든 항목이 보이지 않더라도 렌더링을 해버린다.)
+=> 목록이 길면 성능 issue가 발생할 수 있다.
+
+
+8. FlatList
+ScrollView와 비슷한 역할을 하지만 사용자가 화면을 스크롤을 하여 접근했을 떄 로딩 및 렌더링된다.
+=> Flat은 화면상 보이는 영역만 로딩 및 렌더링한다.
+
+8-1. FlatList는 map를 통해 data를 표현하지 않는다. 내장 프로퍼티를 이용해 렌더링한다.
+8-2. data={...} data props를 통해 렌더링할 data를 가져온다.
+8-2. renderItem={(data)=>{return <View><Text>{data.data}</Text></View>}} 렌더링한다. 
+=> 스크롤을 시작하면 renderItem이 다시 실행되어 data를 가져온다.
+8-3. data에 key라는 props가 존재하면 자동적으로 사용된다.
+8-4. key라는 이름의 props이 존재하지 않으면 keyExtractor 내장 프로퍼티를 이용한다.
+=> keyExtractor((item,index)=>{return item.id}) => item.id가 key로써 사용된다.
+
+
+9. react-native Structure
+상태관리는 상위 컴포넌트에서 하지만 상태변화함수의 트리거는 하위 컴포넌트에서 발생시키고 싶다.
+=> props를 이용해서 function을 넘기고 하위 컴포넌트에서 사용한다. => 상위 컴포넌트에서 사용된다.
+
+
+10. Pressable core-components
+요소를 터치할 떄의 이벤트를 걸기 위해서는 Pressable 컴포넌트를 사용하여 감싸야 한다.
+이후 onPress 내장 프로퍼티를 사용해서 이벤트를 트리거한다.
+
+
+
+
+
+
+
+
 
 
 
