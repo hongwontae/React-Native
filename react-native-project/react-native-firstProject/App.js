@@ -1,25 +1,44 @@
 import { useState } from "react";
-import { StyleSheet, View, FlatList } from "react-native";
+import { StyleSheet, View, FlatList, Button } from "react-native";
+import {StatusBar} from 'expo-status-bar';
 
 import GoalItem from "./components/GoalItem";
 import GoalInput from "./components/GoalInput";
 
 export default function App() {
+  const [modal, showModal] = useState(false); 
   const [goal, setGoals] = useState([]);
+
+  function modalShow(){
+    showModal(true);
+  }
+
+  function modalStop(){
+    showModal(false);
+  }
 
   function buttonHandler(text) {
     setGoals((prevState) => {
-      return [...prevState, { text, id: Math.random().toString() }];
+      return [...prevState, { text, id: Math.random().toString()}];
     });
+    modalStop();
   }
+  
 
-  function deleteGoalHandler() {
-    console.log("delete!");
+  function deleteGoalHandler(id) {
+    setGoals((prevState)=>{
+      return  prevState.filter((ele, idx, arr)=>{
+        return ele.id !== id;
+      })
+    })
   }
 
   return (
+    <>
+    <StatusBar style="light"></StatusBar>
     <View style={styles.addContainer}>
-      <GoalInput onAddGoal={buttonHandler}></GoalInput>
+      <Button title="do you want plus goals?" color={'red'} onPress={modalShow}></Button>
+      <GoalInput onVisible={modal} onAddGoal={buttonHandler} onCancel={modalStop}></GoalInput>
       <View style={styles.goalsContainer}>
         <FlatList
           data={goal}
@@ -27,6 +46,7 @@ export default function App() {
             return (
               <GoalItem
                 itemData={itemData.item.text}
+                id = {itemData.item.id}
                 onDeleteItem={deleteGoalHandler}
               ></GoalItem>
             );
@@ -37,6 +57,7 @@ export default function App() {
         ></FlatList>
       </View>
     </View>
+    </>
   );
 }
 
@@ -45,6 +66,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 50,
     paddingHorizontal: 16,
+    backgroundColor : '#1e085a'
   },
   goalsContainer: {
     flex: 5,

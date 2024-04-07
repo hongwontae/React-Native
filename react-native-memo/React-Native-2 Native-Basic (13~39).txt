@@ -93,6 +93,35 @@ ScrollView와 비슷한 역할을 하지만 사용자가 화면을 스크롤을 
 이후 onPress 내장 프로퍼티를 사용해서 이벤트를 트리거한다.
 
 
+11. react-native item delete
+setFunc의 콜백함수, filter, !로직을 혼합하여 delete 로직을 생성한다.
+
+
+12. Android 물결 효과 추가하기 & IOS 대안
+pressable components의 android_ripple 프로퍼티를 통해 item 터치 시 효과를 간단하게 추가할 수 있다.
+
+IOS는 pressable의 style 속성을 통해 전달해줘야 한다.
+style={({pressed})=>{body....}} => pressed가 터치가 되었을 떄 body를 실행시킨다.
+
+
+13. Modal
+<Modal> core-component을 사용한다.
+=> RN의 모달이 visible={true} 상태일 떄는 화면을 가득채운다. visible={false}면 내려간다.
+=> animationType을 통해 animation을 구현할 수 있다.
+=> 상태 관리와 props를 통해 모달의 true, false를 구현한다.
+
+
+14. Image
+image를 다루는 core-component이다.
+
+
+15. app.json
+"backgroundColor" : "#1e085a" => expo 파일에 프로퍼티를 추가하면 모든 배경화면 색상 default을 줄 수 있다.
+
+
+
+
+
 
 
 

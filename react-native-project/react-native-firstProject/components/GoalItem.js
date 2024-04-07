@@ -2,11 +2,17 @@ import { StyleSheet, View, Text, Pressable } from "react-native";
 
 function GoalItem(props) {
   return (
-    <Pressable onPress={props.onDeleteItem}>
-      <View style={styles.goalItem}>
+    <View style={styles.goalItem}>
+      <Pressable
+        android_ripple={{ color: "red" }}
+        onPress={props.onDeleteItem.bind(this, props.id)}
+        style={({pressed})=>{
+          return pressed && styles.pressedItem
+        }}
+      >
         <Text style={styles.goalText}>{props.itemData}</Text>
-      </View>
-    </Pressable>
+      </Pressable>
+    </View>
   );
 }
 
@@ -21,5 +27,9 @@ const styles = StyleSheet.create({
   },
   goalText: {
     color: "white",
+    padding: 6,
   },
+  pressedItem : {
+    // opacity : 0.5,
+  }
 });
