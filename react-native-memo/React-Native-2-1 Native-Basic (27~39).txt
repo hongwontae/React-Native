@@ -24,7 +24,7 @@ APP.js 파일 내의 APP 컴포넌트는 앱에 렌더링 되는 루트 컴포�
 
 3. Native Styling
 Native 프로젝트는 웹을 target하여 UI를 개발하는 것이 아니라 안드로이드, ios를 기준으로 개발하는 것이다.
-스타일 상속이 없다.
+*** 스타일 상속이 없다.
 
 3-1. inline Styling 
 => 몇몇 컴포넌트들은 style이라는 프로퍼티를 가지고 있다. style 프로퍼티에 css 객체를 주면 적용된다.
@@ -37,7 +37,7 @@ react-native package에서 StyleSheet 객체를 import => StyleSheet.create 메�
 
 
 4. Native flex
-4-1. view tag는 flex를 자동으로 사용한다. (자식들의 배치는 column)
+4-1. view tag는 flex를 자동으로 사용한다. (defualt => flexDirection : column)
 4-2. flex property => flex : n(n만큼 공간을 차지한다. 부모가 1, 자식1이 1, 자식2가 4면 자식 1은 1/5을 
 갖고 자식 2는 4/5를 갖는다.)
 4-3. 나머지는 css flex와 같다.
@@ -60,6 +60,8 @@ borderRadius의 경우 Text tag에 styles로 적용하게 되면 ios의 경우 �
 => ios라 그런것이다.
 => 공식문서를 확인하거나 래퍼 컴포넌트로 감싸면 해결된다.
 
+*** android와 IOS의 style이 적용 상이 => 래퍼 컴포넌트 view 써보기
+
 
 7. ScrollView
 ScrollView tag는 해당 영역에서 요소들이 height을 넘어가면 스크롤 효과를 주는 core-component이다.
@@ -70,53 +72,11 @@ ScrollView tag는 해당 영역에서 요소들이 height을 넘어가면 스크
 => 목록이 길면 성능 issue가 발생할 수 있다.
 
 
-8. FlatList
-ScrollView와 비슷한 역할을 하지만 사용자가 화면을 스크롤을 하여 접근했을 떄 로딩 및 렌더링된다.
-=> Flat은 화면상 보이는 영역만 로딩 및 렌더링한다.
-
-8-1. FlatList는 map를 통해 data를 표현하지 않는다. 내장 프로퍼티를 이용해 렌더링한다.
-8-2. data={...} data props를 통해 렌더링할 data를 가져온다.
-8-2. renderItem={(data)=>{return <View><Text>{data.data}</Text></View>}} 렌더링한다. 
-=> 스크롤을 시작하면 renderItem이 다시 실행되어 data를 가져온다.
-8-3. data에 key라는 props가 존재하면 자동적으로 사용된다.
-8-4. key라는 이름의 props이 존재하지 않으면 keyExtractor 내장 프로퍼티를 이용한다.
-=> keyExtractor((item,index)=>{return item.id}) => item.id가 key로써 사용된다.
 
 
-9. react-native Structure
-상태관리는 상위 컴포넌트에서 하지만 상태변화함수의 트리거는 하위 컴포넌트에서 발생시키고 싶다.
-=> props를 이용해서 function을 넘기고 하위 컴포넌트에서 사용한다. => 상위 컴포넌트에서 사용된다.
 
 
-10. Pressable core-components
-요소를 터치할 떄의 이벤트를 걸기 위해서는 Pressable 컴포넌트를 사용하여 감싸야 한다.
-이후 onPress 내장 프로퍼티를 사용해서 이벤트를 트리거한다.
 
-
-11. react-native item delete
-setFunc의 콜백함수, filter, !로직을 혼합하여 delete 로직을 생성한다.
-
-
-12. Android 물결 효과 추가하기 & IOS 대안
-pressable components의 android_ripple 프로퍼티를 통해 item 터치 시 효과를 간단하게 추가할 수 있다.
-
-IOS는 pressable의 style 속성을 통해 전달해줘야 한다.
-style={({pressed})=>{body....}} => pressed가 터치가 되었을 떄 body를 실행시킨다.
-
-
-13. Modal
-<Modal> core-component을 사용한다.
-=> RN의 모달이 visible={true} 상태일 떄는 화면을 가득채운다. visible={false}면 내려간다.
-=> animationType을 통해 animation을 구현할 수 있다.
-=> 상태 관리와 props를 통해 모달의 true, false를 구현한다.
-
-
-14. Image
-image를 다루는 core-component이다.
-
-
-15. app.json
-"backgroundColor" : "#1e085a" => expo 파일에 프로퍼티를 추가하면 모든 배경화면 색상 default을 줄 수 있다.
 
 
 

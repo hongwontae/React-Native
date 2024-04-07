@@ -1,9 +1,11 @@
 1. React Native란?
-React => 상태를 관리하고 가상의 컴포넌트 트리를 구축하는 library
+React => 상태를 관리하고 가상의 컴포넌트 트리를 구축하는 library (상태관리 + 컴포넌트 트리 구조)
 React-DOM => React가 웹 개발을 용이하게 하는 라이브러리
 (플랫폼 대상이 Web)
 React-native => React가 IOS,Android 개발을 용이하게 하는 라이브러리
 (플랫폼 대상이 IOS=apple, Android=samsung)
+
+*flatform =>디지털 공간에서 많은 행위자들이 네트워크에 참여하여 서로 관계를 맺으며 가치를 만들어나가는 체계
 
 
 2. React-Native의 내부
@@ -20,7 +22,7 @@ Expo CLI는 조금 더 구축된 native 라이브러리를 의미하고 Native C
 
 
 4. React-Native 생성
-npx create-expo-app
+*** npx create-expo-app native-name
 
 
 5. React-Native 분석
