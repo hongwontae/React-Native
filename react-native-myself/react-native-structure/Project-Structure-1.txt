@@ -1,0 +1,12 @@
+1. 컴포넌트는 3개로 구축한다. app, input, item
+
+2. app은 StatusBar, View(모든 걸 포함하는 Container), flatList를 통한 item 표현
+
+3. input은 modal, image, textInput, button으로 구성
+
+4. item은 pressable, view, text로 구성
+
+5. 상태관리는 모달 상태 관리, items 상태관리, text 상태관리 3개이다. (2개는 app, 하나는 하위)
+
+
+6. delete 구현하는데 에레가 발생한다. 모르겠다.
