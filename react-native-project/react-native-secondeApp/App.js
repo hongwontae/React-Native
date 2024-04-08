@@ -14,7 +14,7 @@ export default function App() {
   let screen = <StartGameScreen getNum={confirmNumber}></StartGameScreen>;
 
   if (userState) {
-    screen = <GameScreen></GameScreen>;
+    screen = <GameScreen userNumber={userState}></GameScreen>;
   }
 
   return (

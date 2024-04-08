@@ -89,6 +89,17 @@ custom-component에 props을 내려주고 pressable의 onperss에 연결
 => android에서 사용했는데 style 에러가 의도치않게 발생한다.
 
 
+11. StyleSheet 색상 글로벌 영역 관리 파일
+js 파일 만들고 export/import 로직을 활용하여 색상을 관리한다.
+
+
+12. 무작위 수 생성, 사용, 디스플레이
+startGame 컴포넌트에서 TextInput에 두 개의 숫자를 주고 유효성 검사를 통과하면 1~100 사이의 숫자 랜덤한 숫자를 띄어주는
+gameScreen 컴포넌트로 이동한다. => 아직은 두 컴포넌트의 관련성을 만들진 않았다.
+
+
+
+
 
 
 
