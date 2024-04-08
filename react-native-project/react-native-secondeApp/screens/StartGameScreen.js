@@ -1,7 +1,29 @@
-import { TextInput, View, StyleSheet } from "react-native";
+import { TextInput, View, StyleSheet, Alert } from "react-native";
 import PrimaryButton from "../components/PrimaryButton";
+import { useState } from "react";
 
 function StartGameScreen() {
+  const [enteredNumber, setEnteredNumber] = useState("");
+
+  function numberInputHandler(text) {
+    setEnteredNumber(text);
+  }
+
+  function resetLogic(){
+    setEnteredNumber('')
+  }
+
+  function confirmInputHandler() {
+    const validData = parseInt(enteredNumber);
+
+    if (isNaN(validData) || validData <= 0 || validData > 99) {
+      Alert.alert("Invaild Number", "Number has to be a between 1 and 99", 
+      [{text : 'Okay', style : 'destructive', onPress : resetLogic}]);
+      return;
+    }
+    console.log('vaild Number')
+  }
+
   return (
     <View style={styles.inputContainer}>
       <TextInput
@@ -10,13 +32,15 @@ function StartGameScreen() {
         keyboardType="number-pad"
         autoCapitalize="none"
         autoCorrect={false}
+        onChangeText={numberInputHandler}
+        value={enteredNumber}
       ></TextInput>
       <View style={styles.twoButtonContainer}>
         <View style={styles.oneButtonContainer}>
-          <PrimaryButton>Reset</PrimaryButton>
+          <PrimaryButton onPress={resetLogic}>Reset</PrimaryButton>
         </View>
         <View style={styles.oneButtonContainer}>
-          <PrimaryButton>Confirm</PrimaryButton>
+          <PrimaryButton onPress={confirmInputHandler}>Confirm</PrimaryButton>
         </View>
       </View>
     </View>
@@ -53,7 +77,7 @@ const styles = StyleSheet.create({
   twoButtonContainer: {
     flexDirection: "row",
   },
-  oneButtonContainer : {
-    flex : 1
-  }
+  oneButtonContainer: {
+    flex: 1,
+  },
 });
