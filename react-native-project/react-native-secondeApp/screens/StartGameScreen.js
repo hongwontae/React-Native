@@ -2,7 +2,7 @@ import { TextInput, View, StyleSheet, Alert } from "react-native";
 import PrimaryButton from "../components/PrimaryButton";
 import { useState } from "react";
 
-function StartGameScreen() {
+function StartGameScreen({getNum}) {
   const [enteredNumber, setEnteredNumber] = useState("");
 
   function numberInputHandler(text) {
@@ -21,7 +21,7 @@ function StartGameScreen() {
       [{text : 'Okay', style : 'destructive', onPress : resetLogic}]);
       return;
     }
-    console.log('vaild Number')
+    getNum(enteredNumber)
   }
 
   return (

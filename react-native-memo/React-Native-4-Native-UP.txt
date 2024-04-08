@@ -77,6 +77,21 @@ custom-component에 props을 내려주고 pressable의 onperss에 연결
 8-4. 유효성 검사 실패 => resetFunc 자동 호출 (alert onperss로 구현)
 
 
+9. Logic-3
+=> if, 변수, state을 통해 각기 다른 컴포넌트를 렌더링하는 방식 사용
+
+9-1. parent App-Component에 state을 추가하고 초기값 부여하지 않는다.
+9-2. if false일 떄는 숫자가 들어오지 않았을 떄, if true일 떄는 숫자 들어왔을 떄 로직을 사용
+
+
+10. SafeAreaView component
+해당 컴포넌트로 둘러싸인 컴포넌트들은 노치(휴대폰 상단 가려지는 부분)을 침범하지 않고 렌더링된다.
+=> android에서 사용했는데 style 에러가 의도치않게 발생한다.
+
+
+
+
+
 
 
 
