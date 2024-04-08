@@ -1,29 +1,47 @@
-import { StyleSheet, ImageBackground } from "react-native";
-import StartGameScreen from "./screens/StartGameScreen";
-import { LinearGradient } from "expo-linear-gradient";
-import { useState } from "react";
-import GameScreen from "./screens/GameScreen";
+import { useState } from 'react';
+import { StyleSheet, ImageBackground } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
+
+import StartGameScreen from './screens/StartGameScreen';
+import GameScreen from './screens/GameScreen';
+import GameOverScreen from './screens/GameOverScreen';
+import Colors from './constants/colors';
 
 export default function App() {
-  const [userState, setUserState] = useState();
+  const [userNumber, setUserNumber] = useState();
+  const [gameIsOver, setGameIsOver] = useState(true);
 
-  function confirmNumber(pickNum) {
-    setUserState(pickNum);
+  function pickedNumberHandler(pickedNumber) {
+    setUserNumber(pickedNumber);
+    setGameIsOver(false);
   }
 
-  let screen = <StartGameScreen getNum={confirmNumber}></StartGameScreen>;
+  function gameOverHandler() {
+    setGameIsOver(true);
+  }
 
-  if (userState) {
-    screen = <GameScreen userNumber={userState}></GameScreen>;
+  let screen = <StartGameScreen onPickNumber={pickedNumberHandler} />;
+
+  if (userNumber) {
+      screen = (
+      <GameScreen userNumber={userNumber} onGameOver={gameOverHandler} />
+    );
+  }
+
+  if (gameIsOver && userNumber) {
+     screen = <GameOverScreen />;
   }
 
   return (
-    <LinearGradient colors={["#4e0329", "#ddb52f"]} style={styles.rootScreen}>
+    <LinearGradient
+      colors={[Colors.primary700, Colors.accent500]}
+      style={styles.rootScreen}
+    >
       <ImageBackground
-        source={require("./assets/images/background.png")}
+        source={require('./assets/images/background.png')}
         resizeMode="cover"
         style={styles.rootScreen}
-        imageStyle={styles.imageStyle}
+        imageStyle={styles.backgroundImage}
       >
        {screen}
       </ImageBackground>
@@ -35,7 +53,7 @@ const styles = StyleSheet.create({
   rootScreen: {
     flex: 1,
   },
-  imageStyle: {
+  backgroundImage: {
     opacity: 0.15,
   },
 });
