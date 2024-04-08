@@ -1,0 +1,69 @@
+1. 시작 설정과 대상 앱 분석하기
+임의의 숫자를 맞추는 게임 앱을 만들자.
+
+App내의 화면은 3개로 잡자. => screens 폴더를 생성하고 3개의 화면 컴포넌트 생성
+커스텀 컴포넌트 => components 폴더 생성
+
+
+2. custom Button 생성
+props.children과 props 로직을 이용해서 Custom-Component을 구축할 수 있다.
+
+
+3. android vs IOS 스타일링
+flex : number => 전체 화면에서 number만큼 크기를 차지하겠다. 그러나 부모가 있다면 그 부모 안에서 숫자 처리를 한다.
+
+box-shadow
+android => elevation prop을 활용
+ios => shadowColor, shadowOffst..등을 사용한다.
+** native css는 안드, IOS 조금 다르게 적용된다.
+
+3-1. margin : 'auto' => marginHorizontal과 비슷하다.
+marginVertical => 상-하 margin
+
+3-2. flex에서 row, column일 떄 justify-content나 align-item을 정하지 않으면 stretch 속성이 적용된다.
+row일 떄 height을 주지 않으면 부모 container의 height까지 차지하고
+column일 떄는 width을 주지 않으면 부모 container의 width까지 차지한다.
+
+3-3. native css의 적용범위는 컨텐츠가 들어갈 공간만 적용된다. => background을 설정할 떄 전체 공간을 차지하지 않는 이유이다.
+=> 이럴 떄는 flex : 1 통해서 전체 공간을 명시적으로 차지해야 한다.
+
+
+
+3. TextInnput property
+3-1. placeHolder => 입력값 넣기 전의 default
+3-2. maxLength => 최대 크기
+3-3. keyBooardType => 입력값을 넣을 떄의 키보드를 강제할 수 있는 프로퍼티
+3-4. autoCorrect => 자동완성 기능 boolean
+3-5. autoCapitalize => 입력값 대문자 기능
+
+
+4. 터치 요소 생성
+touchable, pressable을 통해서 만들 수 있다. => native가 pressable을 권장한다.
+
+pressable의 터치 효과는 두 가지 특징이 존재한다.
+4-1. android는 android_ripple를 사용해서 터치 효과/ IOS는 pressable의 style에서 화살표 함수를 통해 구현
+style={({pressed}=>{
+    return pressed ? [styles.pressed, styles.container] : styles.container
+})} => pressed는 눌렀는지 인식하는 boolean(ios, android 다 인식한다.) 삼항연산자로 구현
+
+4-2. pressable의 터치 효과 범위를 전체 요소가 포함되기 위해서 pressable은 컨테이너 안쪽에 존재해야 한다.
+
+
+5. 그라데이션 효과
+npx expo install expo-linear-gradient
+LinearGradient component을 불러와서 color 프로퍼티에 배열에 색상 값을 주어서 그라데이션 효과를 표현한다.
+
+
+6. ImageBackground component
+background-Image을 구현하는 컴포넌트이다.
+6-1. source을 통해 require을 통해 사진을 가지고 온다.
+6-2. relsizeMode = '' => background-size와 같다.
+6-3. view와 image를 조합한 것이 ImageBackground이다. image만을 target하는 style prop => imageStyle (투명도 많이 사용)
+
+
+7. 
+
+
+
+
+
