@@ -1,20 +1,51 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View, StatusBar } from "react-native";
+import AppStart from "./components/AppStart";
+import { useState } from "react";
+import Information from "./components/Information";
 
 export default function App() {
+  const [title, setTitle] = useState("");
+
+  function clickPicture(text) {
+    setTitle(text);
+  }
+
+  let content;
+
+  if (title === "Shankly") {
+    content = (
+      <>
+        <Information name='Shankly'>Shankly</Information>
+      </>
+    );
+  }
+
+  if (title === "Paisley") {
+    content = (
+      <>
+        <Information name='Paisley'>Paisley</Information>
+      </>
+    )
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <>
+      <StatusBar barStyle="dark-content"></StatusBar>
+      <View style={styles.totalContainer}>
+        <AppStart onClick={clickPicture}></AppStart>
+        <View>
+        {content}
+      </View>
+      </View>
+
+    </>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  totalContainer: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#e52a3c",
+    alignItems: "center",
   },
 });
