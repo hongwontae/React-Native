@@ -1,0 +1,18 @@
+1. 크기에 따른 width, height 처리
+휴대폰마다 크기가 다르기 떄문에 요소의 넓이와 높이도 동적으로 처리되야한다.
+% => 부모 컨테이너의 넓이에 따라 동적 계산된다.
+minWidth(minHeight) : n => 최소 이정도는 갖겠다.
+maxWidth(maxHeight) : n => 최대 이정도만 갖겠다.
+
+
+2. Dimensions API
+정의 : Dimensions API는 JS 객체로 RN을 렌더링하고 있는 화면의 크기, 높이, Scale, 폰트 사이즈등을 알려주는 API이다.
+
+특징
+2-1. const deviceWidth = Dimensions.get('window').width; 
+=> 리액트 네이티브를 렌더링하고 있는 기기의 넓이를 반환한다.
+2-2. deviceWidth을 통해서 StyleSheet 처리를 하면 동적인 화면 설정이 가능하다.
+=> 이 떄 삼항연산자를 사용하여 처리가 유용하다.
+
+
+3.
