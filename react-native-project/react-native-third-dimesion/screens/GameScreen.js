@@ -5,6 +5,7 @@ import {
   Alert,
   FlatList,
   useWindowDimensions,
+  ScrollView
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -135,12 +136,16 @@ function GameScreen({ userNumber, onGameOver }) {
         />
       </View>
     </View>
+
   );
 }
 
 export default GameScreen;
 
 const styles = StyleSheet.create({
+  sss : {
+    flex : 1
+  },
   screen: {
     flex: 1,
     padding: 24,
