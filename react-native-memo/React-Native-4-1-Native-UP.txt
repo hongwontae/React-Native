@@ -31,7 +31,7 @@ column일 떄는 width을 주지 않으면 부모 container의 width까지 차�
 
 3. TextInnput property
 3-1. placeHolder => 입력값 넣기 전의 default
-3-2. maxLength => 최대 크기
+3-2. maxLength => 최대 입력값
 3-3. keyBooardType => 입력값을 넣을 떄의 키보드를 강제할 수 있는 프로퍼티
 3-4. autoCorrect => 자동완성 기능 boolean
 3-5. autoCapitalize => 입력값 대문자 기능
@@ -48,6 +48,8 @@ style={({pressed}=>{
 })} => pressed는 눌렀는지 인식하는 boolean(ios, android 다 인식한다.) 삼항연산자로 구현
 
 4-2. pressable의 터치 효과 범위를 전체 요소가 포함되기 위해서 pressable은 컨테이너 안쪽에 존재해야 한다.
+
+4-3. pressable의 이벤트는 onPress이다.
 
 
 5. 그라데이션 효과
@@ -84,18 +86,29 @@ custom-component에 props을 내려주고 pressable의 onperss에 연결
 9-2. if false일 떄는 숫자가 들어오지 않았을 떄, if true일 떄는 숫자 들어왔을 떄 로직을 사용
 
 
-10. SafeAreaView component
-해당 컴포넌트로 둘러싸인 컴포넌트들은 노치(휴대폰 상단 가려지는 부분)을 침범하지 않고 렌더링된다.
-=> android에서 사용했는데 style 에러가 의도치않게 발생한다.
 
 
-11. StyleSheet 색상 글로벌 영역 관리 파일
-js 파일 만들고 export/import 로직을 활용하여 색상을 관리한다.
 
 
-12. 무작위 수 생성, 사용, 디스플레이
-startGame 컴포넌트에서 TextInput에 두 개의 숫자를 주고 유효성 검사를 통과하면 1~100 사이의 숫자 랜덤한 숫자를 띄어주는
-gameScreen 컴포넌트로 이동한다. => 아직은 두 컴포넌트의 관련성을 만들진 않았다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -2,6 +2,7 @@
 
 *.png
 *.jpg
+*.ttf
 
 # dependencies
 node_modules/
