@@ -34,3 +34,17 @@ const {width, height} = useWindowDimensions();
 const marginTopDistance = width > 500 ? 100 : 200
 style={[styles.root, {marginTop : marginTopDistance}]}; 
 => 재실행되어 css가 적용되어야 하기 떄문에 inline으로 작성한다.
+
+
+5. IOS의 가로 모드 문제점 해결하기
+IOS가 가로 모드 일 떄 textInput의 key-pad가 UI 전체를 덮고 key-pad을 닫을 수가 없는 오류가 발생한다.
+KeyboardAvoidingView core-component을 통해 key-pad가 UI를 덮지 않게 하고
+ScrollView을 통해 화면을 스크롤링하여 요소를 적절히 배치할 수 있다.
+
+
+6. 가로-세로 styling
+useWindowDimensions을 통해 width과 height을 알아내고 if문을 통해 JSX을 반환하는 return문에 동적인 반환을 한다.
+동적인 반환은 가로, 세로 변경될 떄마다 컴포넌트가 재실행됨으로 쉽게 구현할 수 있다.
+
+
+7. 
