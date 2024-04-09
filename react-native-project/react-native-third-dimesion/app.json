@@ -3,7 +3,7 @@
     "name": "react-native-third-dimesion",
     "slug": "react-native-third-dimesion",
     "version": "1.0.0",
-    "orientation": "portrait",
+    "orientation": "default",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {

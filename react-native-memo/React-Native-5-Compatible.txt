@@ -11,8 +11,26 @@ maxWidth(maxHeight) : n => 최대 이정도만 갖겠다.
 특징
 2-1. const deviceWidth = Dimensions.get('window').width; 
 => 리액트 네이티브를 렌더링하고 있는 기기의 넓이를 반환한다.
+=> get('window' or 'screen') => ios에서는 화면 전체를 의미하지만 android에서는 window는 상태표시줄을 제외한 화면을 의미한다.
 2-2. deviceWidth을 통해서 StyleSheet 처리를 하면 동적인 화면 설정이 가능하다.
 => 이 떄 삼항연산자를 사용하여 처리가 유용하다.
 
 
-3.
+3. 세로/가로 화면 설정
+app.json의 "orientation": "portrait"이 기본 설정이다.
+=> 세로 고정
+
+orientation을 defulat나 landscape로 변경하면 가로 설정이 가능하다.
+=> default는 자유롭게 변경, landscape는 가로 고정
+
+Dimensions API는 가로 => 세로, 세로 => 가로가 되었을 떄 다시 실행하지 않는다.
+처음 가로 모드로 Dimensions API가 계산되어 CSS가 적용되면 세로 모드일 떄의 적용은 안되는 것
+
+
+4. useWindowDimensions()
+정의 : 기기의 width와 height을 알아내고 가로와 세로 모드로 변경될 떄마다 컴포넌트를 재실행한다.
+
+const {width, height} = useWindowDimensions();
+const marginTopDistance = width > 500 ? 100 : 200
+style={[styles.root, {marginTop : marginTopDistance}]}; 
+=> 재실행되어 css가 적용되어야 하기 떄문에 inline으로 작성한다.
