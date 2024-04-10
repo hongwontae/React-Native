@@ -53,7 +53,7 @@ image를 다루는 core-component이다.
 => expo 파일에 프로퍼티를 추가하면 모든 배경화면 색상 default을 줄 수 있다.
 
 
-9. bind()
+
 
 
 

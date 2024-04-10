@@ -1,0 +1,16 @@
+body{
+    background-color: white;
+    color : '#fff'
+}
+
+.container{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+div{
+    width: 200px;
+    height: 200px;
+    background-color: #dc19;
+}

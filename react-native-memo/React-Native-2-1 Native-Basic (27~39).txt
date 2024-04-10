@@ -38,9 +38,14 @@ react-native package에서 StyleSheet 객체를 import => StyleSheet.create 메�
 
 4. Native flex
 4-1. view tag는 flex를 자동으로 사용한다. (defualt => flexDirection : column)
-4-2. flex property => flex : n(n만큼 공간을 차지한다. 부모가 1, 자식1이 1, 자식2가 4면 자식 1은 1/5을 
-갖고 자식 2는 4/5를 갖는다.)
-4-3. 나머지는 css flex와 같다.
+4-2. 같은 레벨에서 flex : number는 전체 비율에서 100%에서 number%까지 갖겠다는 것이다.
+4-3. flex : num가 처리되면 해당 요소는 height 처리가 불가능해진다.
+
+4-4. 나머지는 css flex와 같다.
+=> direction이 column이 defualt이다. 이 떄 아무런 처리를 하지 않으면 width는 부모의 width을 따라가고
+height은 콘텐츠 크기
+=> direction이 row면 height은 부모의 height을 쫓아가고 width는 컨텐츠 크기
+=> justify-content나 align-itmes가 적용되면 width, height은 컨텐츠 크기만 차지
 
 
 5. Native Event
@@ -71,6 +76,7 @@ ScrollView tag는 해당 영역에서 요소들이 height을 넘어가면 스크
 7-3. ScrollView는 렌더링이 트리거되면 모든걸 렌더링하기 떄문에 map을 주로 사용하여 자식들을 표현한다.
 7-4. ScrollView는 모든 자식 항목을 렌더링한다. (모든 항목이 보이지 않더라도 렌더링을 해버린다.)
 => 목록이 길면 성능 issue가 발생할 수 있다.
+7-5. Scrollview를 사용하려면 flex : number을 먼저 설계해야한다.
 
 
 
