@@ -4,3 +4,5 @@
 
 app.json의 splash 설정을 통해 이미지와 background 처리를 할 수 있다.
 
+
+2. flatList

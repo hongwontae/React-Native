@@ -6,6 +6,7 @@ import {
   Platform,
 } from "react-native";
 
+
 function CategoryGridTile({ color, title, onPress }) {
   return (
     <>

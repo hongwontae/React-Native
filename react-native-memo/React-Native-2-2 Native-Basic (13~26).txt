@@ -10,6 +10,8 @@ ScrollView와 비슷한 역할을 하지만 사용자가 화면을 스크롤을 
 1-4. key라는 이름의 props이 존재하지 않으면 keyExtractor 내장 프로퍼티를 이용한다. (key 할당 프로퍼티)
 => keyExtractor((item,index)=>{return item.id}) => item.id가 key로써 사용된다. 
 
+*** data prop에 값을 주면 keyExtractor, renderItem의 매개변수는 자동적으로 그 값을 받게 된다.
+
 
 2. react-native Structure
 상태관리는 상위 컴포넌트에서 하지만 상태변화함수의 트리거는 하위 컴포넌트에서 발생시키고 싶다.
