@@ -1,1 +1,9 @@
-1. 
+1. react-native navigation
+1-1. web은 url을 활용하는 navigation이지만 모바일은 url을 사용하지 못한다.
+
+
+2. Styling
+2-1. pressable의 ios pressed func은 android에게도 영향을 미친다.
+2-2. ios의 boxShadow는 elevation의 영향을 받지 않는다. android는 모든 box-shadow의 영향을 받는다.
+2-3. components의 style prop은 함수를 받을 수 있고 그 함수는 실행된 상태이다. 다만 매개변수 pressed의 이벤트를
+트리거하는 효과가 있을 뿐이다.
