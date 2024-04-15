@@ -1,0 +1,6 @@
+1. splash
+1-1. SplashScreen.hideAsync(); => Splash 화면을 즉시 숨긴다.
+1-2. SplashScreen.preventAutoHideAsync(); => Splash 화면을 즉시 나타낸다.
+
+app.json의 splash 설정을 통해 이미지와 background 처리를 할 수 있다.
+

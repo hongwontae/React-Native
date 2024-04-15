@@ -56,7 +56,7 @@ platform api를 통해서 각 platform마다 다른 컴포넌트, 스타일, 색
 
 8-1. react-native에서 Platform 객체를 불러온다.
 Platform.OS === 'android'('ios','web'..) ? 20 : 40
-=> 이렇게 플랫폼마다 다른 값을 줄 수 있다.\
+=> 이렇게 플랫폼마다 다른 값을 줄 수 있다.
 
 8-2. Platform.select({android : value, ios : value})를 통해서 쉽게 값을 전달할 수 도 있다.
 

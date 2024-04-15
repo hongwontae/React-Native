@@ -76,7 +76,7 @@ ScrollView tag는 해당 영역에서 요소들이 height을 넘어가면 스크
 7-3. ScrollView는 렌더링이 트리거되면 모든걸 렌더링하기 떄문에 map을 주로 사용하여 자식들을 표현한다.
 7-4. ScrollView는 모든 자식 항목을 렌더링한다. (모든 항목이 보이지 않더라도 렌더링을 해버린다.)
 => 목록이 길면 성능 issue가 발생할 수 있다.
-7-5. Scrollview를 사용하려면 flex : number을 먼저 설계해야한다.
+7-5. Scrollview를 사용하려면 상위 부모의 flex : number을 먼저 설계해야한다.
 
 
 

@@ -31,6 +31,9 @@ pressable components의 android_ripple 프로퍼티를 통해 item 터치 시 �
 IOS는 pressable의 style 속성을 통해 전달해줘야 한다.
 style={({pressed})=>{body....}} => pressed가 터치가 되었을 떄 body를 실행시킨다.
 
+pressable components가 최상위 부모 요소로 여러 컴포넌트를 덮고 있으면 pressable의 터치 효과가 외곽에만
+나타날 수 있기에 pressable components의 위치을 안쪽에 위치시켜야 할 수 도 있다.
+
 => android_ripple, IOS style을 동시에 사용하면 효과가 겹치게 된다. => 고려해라
 
 
@@ -46,6 +49,7 @@ image를 다루는 core-component이다.
 => source 프로퍼티에 require('path')을 통해 이미지를 가져온다.
 => style 프로퍼티로 이미지를 조정한다.
 => img tag의 속성과 비슷해서 width와 height % 제외 단위 설정 가능
+=> % 조정하려면 부모 컨테이너를 생성
 
 
 8. app.json
