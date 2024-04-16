@@ -41,7 +41,7 @@ column일 떄는 width을 주지 않으면 부모 container의 width까지 차�
 4. 터치 요소 생성
 touchable, pressable을 통해서 만들 수 있다. => native가 pressable을 권장한다.
 
-pressable의 터치 효과는 두 가지 특징이 존재한다.
+pressable의 터치 효과는 세 가지 특징이 존재한다.
 4-1. android는 android_ripple를 사용해서 터치 효과/ IOS는 pressable의 style에서 화살표 함수를 통해 구현
 style={({pressed}=>{
     return pressed ? [styles.pressed, styles.container] : styles.container

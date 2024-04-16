@@ -15,20 +15,26 @@
 3-1. React Navigation은 컴포넌트 기반 라이브러리이다.
 
 3-2. NavigationContainer => navigation의 기능을 사용할 모든 컴포넌트들을 덮는 컴포넌트
+(import {NavigationContainer} from '@react-navigation/native';)
 
 3-3. const Stack = createNativeStackNavigator() 
 => 함수를 호출하면 3개의 navi 기능을 도와주는 프로퍼티가 할당된다.
+(import {createNativeStackNavigator} from '@react-navigation/native-stack';)
 
 3-4. <Stack.Navigator><Stack.Navigator/>
 => <Stack.Screen>을 덮는 컴포넌트
 
-3-5. <Stack.scrren>
+3-5. <Stack.screen>
 => navi 기능을 사용할 컴포넌트를 등록하는 컴포넌트
 => name : 등록할 컴포넌트의 별칭
 => component : 등록할 컴포넌트
 
 3-6. Screen으로 등록된 컴포넌트는 자동적으로 navigation이라는 props을 받는다.
 => navigation.navigate('name')을 통해 화면이동을 트리거 할 수 있다.
+
+3-7. screen으로 등록이 되어있고 navigate('screen-name', {key : value, key2: value})에 대상이라면
+props route을 통해 route.params.key를 통해 data에 접근할 수 있다.
+(route는 navigaiton처럼 screen으로 등록되면 자동으로 가져오는 props이다.)
 
 
 4. 기본 설정 
