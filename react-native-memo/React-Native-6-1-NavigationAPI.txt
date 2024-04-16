@@ -36,6 +36,8 @@
 props route을 통해 route.params.key를 통해 data에 접근할 수 있다.
 (route는 navigaiton처럼 screen으로 등록되면 자동으로 가져오는 props이다.)
 
+3-8. 위의 기능이 마련되면 뒤로 가기 기능이 자동으로 추가된다.
+
 
 4. 기본 설정 
 Stack.Navigator의 첫 번쨰 Stack.Screen이 초기 화면이 된다.
@@ -62,6 +64,7 @@ route.params.key를 통해 접근 가능
 
 
 7. 음식 디스플레이하기
+route를 통해 가져온 params, arr.filter를 통해 데이터를 찾고 flatList를 사용해서 렌더링한다.
 
 
 

@@ -1,0 +1,47 @@
+1. header default and background styling
+<Stack.Screen name="..." component={...} options={
+    ...
+} /> options 객체를 통해 헤더 설정 + 기타 설정이 가능하다.
+
+options={
+    title: "All Category", => 헤더의 제목, title이 설정되면 name은 navi의 역할만 한다.
+    headerTitleAlign: "center", => text-align
+    headerStyle: { backgroundColor: "#351401" }, 
+    headerTintColor: "white", => color
+    contentStyle: { backgroundColor: "#3f2f25" }, => content의 전체 style
+}
+
+options를 하나의 screen에 고정시키지 않고 여러 screen에도 사용하고 싶다면 Stack.Navigator의 screenOptions={{...}}에서
+적용하면 된다.
+
+
+2. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. image vs imageBackground
+2. 둘의 width, height 적용방법
+3. shadow의 ios, android 차이점
+4. overflow : hidden 플랫폼마다의 적용방식
