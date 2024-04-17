@@ -21,6 +21,15 @@ option={{
 => 상호작용하고 싶다면 컴포넌트의 navigation.setOptions({headerRight : ()=>{return JSX}}) + useLayoutEffect를 사용
 
 
+3. 헤더에 아이콘 버튼 추가하기
+3-1. Pressable + react-native의 내장된 icon 기능을 합쳐서 custom 컴포넌트로 아이콘 버튼 생성
+3-2. props을 받아서 icon의 속성, pressable의 onPress을 처리한다.
+
+
+4. Drawer navigator
+정의 : 앱에 측면 드로어를 추가하는 내비게이터이다.
+
+
 
 
 
