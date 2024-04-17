@@ -25,6 +25,7 @@ function MealsOverviewScreen({ route, navigation }) {
     const summaryData = itemData.item;
 
     const data = {
+      id : summaryData.id,
       title: summaryData.title,
       imageUrl: summaryData.imageUrl,
       affordability: summaryData.affordability,
@@ -34,6 +35,7 @@ function MealsOverviewScreen({ route, navigation }) {
 
     return (
       <MealItem
+        id={data.id}
         title={data.title}
         imageURL={data.imageUrl}
         affordability={data.affordability}
