@@ -28,6 +28,46 @@ option={{
 
 4. Drawer navigator
 정의 : 앱에 측면 드로어를 추가하는 내비게이터이다.
+1. npm install @react-navigation/stack
+2. npx expo install react-native-gesture-handler
+3. npm install @react-navigation/drawer
+4. npx expo install react-native-gesture-handler react-native-reanimated
+=> 설정
+
+사용방법은 Stack 내비게이션과 동일하다.
+1. NavigationContainer을 생성한다.
+2. createDrawerNavigator을 호출해서 변수에 객체를 할당한다.
+3. Drawer.Navigator(부모)/ Drawer.Screen(자식)으로 설정
+4. Screen name, component, options etc..
+
+
+5. Drawer Navi +
+5-1. RN-Navigation Docs에 많은 정보가 존재한다.
+
+5-2. screen에 등록된 컴포넌트는 route, navigation을 props로 받는다.
+=> Stack과 동일하지만 navigation.toggleDrawer()를 통해 드로어를 열 수 있는 기능이 존재한다.
+
+
+6. 하단 탭 추가, 구성 & 사용하기
+설정 => npm install @react-navigation/bottom-tabs
+
+사용방법
+1. import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+2. const Tab = createBottomTabNavigator();
+3. 내비게이션 컨테이너 안에 tab.navigator, tab.Screen을 설정하면 된다.
+4. Icon 설정은 Stack, Drawer, Tab 모두 사용하는 핵심 프로퍼티이다.
+
+
+7. 내비게이터 중첩
+7-1. 두 개의 내비게이션 create 함수를 호출하여 변수에 할당한다.
+
+7-2. Stack, Drawer가 존재한다면 Stack는 Navigation을 구현하고 Drawer를 function return 값에 구현한다.
+
+7-3. Stack의 component는 Drawer의 리턴 값으로 구성한다.
+
+7-4 header가 두 개이기 떄문에 headerShown을 통해서 하나를 숨긴다.
+
+
 
 
 
