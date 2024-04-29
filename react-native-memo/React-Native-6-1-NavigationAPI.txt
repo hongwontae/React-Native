@@ -56,7 +56,7 @@ navigation.navigate('screen-name', {object...})
 navigate된 컴포넌트는 자동적으로 props를 통해 route을 받을 수 있다.
 해당 route props는 route.params.objKey를 통해서 보낸 객체에 접근할 수 있다.
 
-useRoute를 통해서 params을 받을 수 있다.
+또한 useRoute를 통해서 params을 받을 수 있다.
 const route = useRoute();
 route.params.key를 통해 접근 가능
 => screen에 등록되지 않은 컴포넌트는 route 객체가 자동적으로 들어오지 않기에 useRoute을 사용한다.
