@@ -23,10 +23,7 @@ function GoalInput(props) {
   return (
     <Modal visible={props.onVisible} animationType="fade">
       <View style={styles.inputContainer}>
-        <Image
-          style={styles.image}
-          source={require("../assets/images/goal.png")}
-        ></Image>
+
         <TextInput
           onChangeText={goalInputHandler}
           style={styles.textInput}
@@ -40,7 +37,7 @@ function GoalInput(props) {
               title="Cancel"
               color="#f31282"
             ></Button>
-          </View>
+          </View>r
           <View style={styles.button}>
             <Button
               title="Add Goal"
