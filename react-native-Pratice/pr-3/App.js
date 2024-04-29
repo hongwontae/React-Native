@@ -6,7 +6,11 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import FirstScreen from "./Screens/FirstScreen";
 import DetailScreen from "./Screens/DetailScreen";
 
-import ContextProvider from "./store/StateContext";
+// import ContextProvider from "./store/context/StateContext";
+
+import {Provider} from 'react-redux';
+import store from './store/redux/store'
+import Counter from "./Screens/Counter";
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -14,7 +18,8 @@ export default function App() {
   return (
     <>
       <StatusBar style="light"></StatusBar>
-      <ContextProvider>
+      {/* <ContextProvider> */}
+      <Provider store={store}>
         <NavigationContainer>
           <Stack.Navigator>
             <Stack.Screen
@@ -40,9 +45,12 @@ export default function App() {
                 return value;
               }}
             ></Stack.Screen>
+
+              <Stack.Screen name="counter" component={Counter}></Stack.Screen>
           </Stack.Navigator>
         </NavigationContainer>
-      </ContextProvider>
+        </Provider>
+      {/* </ContextProvider> */}
     </>
   );
 }

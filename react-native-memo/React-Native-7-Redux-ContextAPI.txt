@@ -7,3 +7,4 @@ store 폴더, context 파일 생성 => context에서 createContext 객체 + expo
 
 
 2. Redux-Toolkit
+2-1. Web의 redux-toolkit과 다를것이 없다.

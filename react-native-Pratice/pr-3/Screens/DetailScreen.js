@@ -1,4 +1,4 @@
-import { View, Text } from "react-native";
+import { View, Text, Button } from "react-native";
 import { useRoute } from "@react-navigation/native";
 import { useLayoutEffect } from "react";
 
@@ -6,6 +6,10 @@ function DetailScreen({ route, navigation }) {
 
     const route3 = useRoute();
     console.log(route3.params.name);
+
+    function counterHandler(){
+      navigation.navigate('counter');
+    }
 
     useLayoutEffect(()=>{
         navigation.setOptions({
@@ -18,6 +22,7 @@ function DetailScreen({ route, navigation }) {
         })
     }, [navigation]);
 
+
   return (
     <>
       <View>
@@ -28,6 +33,7 @@ function DetailScreen({ route, navigation }) {
             <Text>{route.params.name}</Text>
             <Text>{route.params.age}</Text>
         </View>
+        <Button title="Counter Go" onPress={counterHandler}></Button>
       </View>
     </>
   );
