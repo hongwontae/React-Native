@@ -1,0 +1,25 @@
+1. options={{
+    Icon : ({})=>{
+        return
+    }
+}}
+1-1. 아이콘을 넣기 위해서 컴포넌트 함수를 return한다.
+1-2. 인자로 {color, size}을 받는다. 
+=> color: tabBarActiveTintColor, 기본 value를 얻는다.
+=> size : 화면에 맞는 size를 자동으로 반환한다.
+
+
+2. Navigation 중첩
+2-1. Native Stack.Screen components={bottomTabs}
+=> 해당 컴포넌트는 Stack 안에 bottomtabs가 존재하는 것이다.
+
+
+3. components Tree
+3-1. 3개의 Screen으로 구성
+3-2. Stack에 bottomTabs가 중첩되었다.
+3-3. AllExpenses, RecentExpense Screen은 ExpenseOutput 컴포넌트가 렌더링한다.
+=> 해당 컴포넌트는 다양한 컴포넌트를 구축하여 UI를 표현한다.
+=> All, Recent에서 다양한 props를 줘야한다.
+
+
+

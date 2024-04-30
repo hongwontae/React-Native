@@ -1,0 +1,4 @@
+1. shadow box의 IOS, android
+
+
+2. pressable의 IOS, android
