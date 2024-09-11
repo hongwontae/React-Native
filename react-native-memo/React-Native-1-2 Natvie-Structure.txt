@@ -1,0 +1,11 @@
+1. app.json
+=> 앱의 주요 설정 파일이다.
+=> name, slug(프로젝트 고유 식별자), version, orientation(앱의 가로, 세로 설정), icon, splash(초기 화면)....
+
+
+2. babel.config.js
+=> 최신 JS 문법 및 JSX를 하위 호환성 있게 트랜스파일링하기 위한 설정 파일
+
+
+3. .expo
+=> EXPO가 사용하는 내부 설정과 캐시 파일들이 들어 있는 폴더

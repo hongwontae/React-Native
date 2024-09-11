@@ -1,0 +1,34 @@
+1. Flatlist는 동적으로 Data를 표현해주는 컴포넌트이다.
+
+2. 보이는 영역까지만 렌더링하고 스크롤링할 시점에 맞춰 다음 데이터를 렌더링한다.
+
+3. renderItem, data props를 required한 props이다. (keyExkeyExtractor도 거의 필수 props이다.)
+3-1. data props
+<FlatList
+    data={[
+        {
+            id : e1,
+            price: 300,
+        },
+        ....
+    ]}
+/>
+=> 배열데이터 받아서 renderItem에 전달한다.
+
+3-2. renderItem props
+<FlatList 
+    renderItem={(itemData)=>{
+        return <List props={itemdata.item}></List>
+    }}
+/>
+=> renderItem의 인자는 data props의 index, item, separators가 존재한다.
+=> item을 건네주면 data의 배열의 수만큼 렌더링된다.
+=> keyExkeyExtractor을 전달하지 않으면 data의 id, key 이름을 RN이 알아서 식별하여 키 처리를 한다.
+
+
+3-3. keyExkeyExtractor
+keyExkeyExtractor={(data)=>{
+    return data.id
+}}
+=> keyExkeyExtractor의 인자는 data props이다. id를 통해 key를 정해주는 방법이 보편적이다.
+=> 인위적으로 KEY 설정이 더 안전하다.

@@ -1,1 +1,22 @@
-1. 
+1. View, Text
+1-1. 문자열은 항상 Text 컴포넌트로 덮여져 있어야한다.
+
+1-2. View는 Dom의 div같은 존재이다. container 용도로 많이 사용된다.
+=> View를 통해서 자식 컴포넌트 배치를 조절한다. 
+
+
+2. RN-Styling
+2-1. inline or StyleSheet을 사용한다.
+2-2. 내장 컴포넌트 모두 style props가 존재하는 것은 아니다. (View, Text....)
+
+2-3. StyleSheet
+=> 해당 객체를 이용해서 스타일을 설정하면 자동완성, 구조화를 할 수 있다.
+
+2-4. %을 표현할 때는 '' 감싸서 표현해야 한다.
+
+2-5. 모든 View에서는 자식들을 기본적으로 FlexDirection : 'column' 처리가 되어 있다.
+
+2-6. FlexDirection의 주축의 반대되는 width or height이 100%로 설정이된다.
+=> FlexDirection : 'row'라면 height이 100%/ FlexDirection : 'column'이라면 width가 100%
+=> 단, align-item 설정이나 각자의 width, height이 결정되면 그것을 우선시 한다.
+

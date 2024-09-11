@@ -39,13 +39,17 @@ react-native package에서 StyleSheet 객체를 import => StyleSheet.create 메�
 4. Native flex
 4-1. view tag는 flex를 자동으로 사용한다. (defualt => flexDirection : column)
 4-2. 같은 레벨에서 flex : number는 전체 비율에서 100%에서 number%까지 갖겠다는 것이다.
+=> 주축에 따라 가용할 공간을 전부 숫자 비율대로 차지한다.
 4-3. flex : num가 처리되면 해당 요소는 height 처리가 불가능해진다.
 
 4-4. 나머지는 css flex와 같다.
-=> direction이 column이 defualt이다. 이 떄 아무런 처리를 하지 않으면 width는 부모의 width을 따라가고
-height은 콘텐츠 크기
-=> direction이 row면 height은 부모의 height을 쫓아가고 width는 컨텐츠 크기
-=> justify-content나 align-itmes가 적용되면 width, height은 컨텐츠 크기만 차지
+=> direction이 column이 defualt이다
+1. flexDirection이 row일 떄 자식 요소들에 width, height이 없다면 컨텐츠 크기만큼 갖는다.
+부모의 width이 더 크더라도 무시하지만 더 작으면 그에 맞춰 비율대로 정렬한다.
+부모의 height은 다 따라간다.
+
+2. flexDirection이 column일 떄 자식 요소들에 width, height이 없다면 width은 100% 설정
+height이 더 크더라도 컨텐츠만큼 길어지지 않지만 height이 더 작아지면 비율에 맞춰 따라간다.
 
 
 5. Native Event
