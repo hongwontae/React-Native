@@ -12,6 +12,7 @@ ScrollView와 비슷한 역할을 하지만 사용자가 화면을 스크롤을 
 1-5. height을 control 하고 싶다면 view을 바깥에 두고 flex 처리한다.
 
 *** data prop에 값을 주면 keyExtractor, renderItem의 매개변수는 자동적으로 그 값을 받게 된다.
+*** data props로 값을 가져오고 renderItem으로 스크롤로 보일 떄 렌더링하고 keyExtractor를 통해 명시적 설정 가능
 
 
 2. react-native Structure
@@ -58,6 +59,10 @@ image를 다루는 core-component이다.
 8. app.json
 "backgroundColor" : "#1e085a" 
 => expo 파일에 프로퍼티를 추가하면 모든 배경화면 색상 default을 줄 수 있다.
+
+
+9. statusBar
+=> 휴대폰 상단의 시간, 아이콘, 와이파이를 표시하는 공간을 제어하는 컴포넌트
 
 
 
