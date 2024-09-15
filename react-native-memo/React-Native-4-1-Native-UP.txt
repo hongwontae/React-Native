@@ -15,7 +15,8 @@ flex : number => 전체 화면에서 number만큼 크기를 차지하겠다. 그
 box-shadow
 android => elevation prop을 활용
 ios => shadowColor, shadowOffst..등을 사용한다.
-** native css는 안드, IOS 조금 다르게 적용된다.
+elevation은 android만, shadow가 붙은 prop은 ios만 적용된다.
+
 
 3-1. margin : 'auto' => marginHorizontal과 비슷하다.
 marginVertical => 상-하 margin
@@ -24,7 +25,8 @@ marginVertical => 상-하 margin
 row일 떄 height을 주지 않으면 부모 container의 height까지 차지하고
 column일 떄는 width을 주지 않으면 부모 container의 width까지 차지한다.
 
-3-3. native css의 적용범위는 컨텐츠가 들어갈 공간만 적용된다. => background을 설정할 떄 전체 공간을 차지하지 않는 이유이다.
+3-3. native css의 적용범위는 컨텐츠가 들어갈 공간만 적용된다. 
+=> background을 설정할 떄 전체 공간을 차지하지 않는 이유이다.
 => 이럴 떄는 flex : 1 통해서 전체 공간을 명시적으로 차지해야 한다.
 
 
@@ -61,7 +63,9 @@ LinearGradient component을 불러와서 color 프로퍼티에 배열에 색상 
 background-Image을 구현하는 컴포넌트이다.
 6-1. source을 통해 require을 통해 사진을 가지고 온다.
 6-2. relsizeMode = '' => background-size와 같다.
-6-3. view와 image를 조합한 것이 ImageBackground이다. image만을 target하는 style prop => imageStyle (투명도 많이 사용)
+6-3. view와 image를 조합한 것이 ImageBackground이다. 
+=> image만을 target하는 props => imageStyle (투명도 많이 사용)
+=> image 외부의 view를 target하는 props => style
 
 
 7. Logic-1

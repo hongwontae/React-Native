@@ -44,6 +44,7 @@ pressable components가 최상위 부모 요소로 여러 컴포넌트를 덮고
 6. Modal
 <Modal> core-component을 사용한다.
 => RN의 모달이 visible={true} 상태일 떄는 화면을 가득채운다. visible={false}면 내려간다.
+(다른 컴포넌트들 위에 표시되는 것, z-index를 생각하면 된다.)
 => animationType을 통해 animation을 구현할 수 있다.
 => 상태 관리와 props를 통해 모달의 true, false를 구현한다.
 
