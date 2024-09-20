@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import NumberContainer from "../components/NumberContainer";
 import PrimaryButton from "../components/PrimaryButton";
 import Card from "../components/Card";
+import Ionicons from "@expo/vector-icons/Ionicons";
 
 function generateRandomBetween(min, max, exclude) {
   const rndNum = Math.floor(Math.random() * (max - min)) + min;
@@ -19,18 +20,14 @@ let minBoundary = 1;
 let maxBoundary = 100;
 
 function GameScreen({ userNumber, onGameOver }) {
-  const initialGuess = generateRandomBetween(
-    1,
-    100,
-    userNumber
-  );
+  const initialGuess = generateRandomBetween(1, 100, userNumber);
   const [currentGuess, setCurrentGuess] = useState(initialGuess);
 
-  useEffect(()=>{
-    if(currentGuess === userNumber){
-        onGameOver();
+  useEffect(() => {
+    if (currentGuess === userNumber) {
+      onGameOver();
     }
-  }, [currentGuess, userNumber, onGameOver])
+  }, [currentGuess, userNumber, onGameOver]);
 
   function nextGuessHandler(direction) {
     if (
@@ -64,10 +61,10 @@ function GameScreen({ userNumber, onGameOver }) {
         <Card>
           <Text>Higher or lower</Text>
           <PrimaryButton onPress={nextGuessHandler.bind(null, "lower")}>
-            +
+            <Ionicons name="add-circle" size={32}></Ionicons>
           </PrimaryButton>
           <PrimaryButton onPress={nextGuessHandler.bind(null, "greater")}>
-            -
+            <Ionicons name="arrow-back-circle" size={32}></Ionicons>
           </PrimaryButton>
         </Card>
         <View>

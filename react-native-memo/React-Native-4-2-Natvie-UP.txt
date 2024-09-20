@@ -30,7 +30,7 @@ https://icons.expo.fyi/Index => 해당 사이트를 통해서 가져올 아이�
 
 6. 커스텀 폰트 추가 & 사용
 npx expo install expo-font => app-loading 사라져서 에러가 발생한다.
-Splash 활용법을 알아야 한다.
+Splash 활용법을 알아야 한다. => 이거에 대해서 알아보자
 
 
 7. 중첩 텍스트 사용/ 스타일링하기
@@ -41,3 +41,11 @@ Splash 활용법을 알아야 한다.
 8. FlatList
 부모 컨테이너를 통해 높이를 제한하면 flatList의 스크롤 영역을 고정시킬 수 있다.
 => 원치 않는 효과 발생을 제거한다.
+
+
+9. Splash
+9-1. 기본적으로 앱이 로드되면 스플래쉬 화면이 자동으로 사라집니다.
+9-2. Splash 라이브러리는 export default로 한꺼번에 보내지 않았기에 import * as SplashScreen from 'exp0...'
+로 가져옵니다.
+9-3. await SplashScreen.preventAutoHideAsync()를 통해 자동 숨김을 방지하여 스플래시 화면이 유지되도록 합니다.
+9-4. await SplashScreen.hideAsync()를 통해 스플래시 화면이 사라지도록 합니다.
