@@ -7,7 +7,7 @@ import GameScreen from "./screens/GameScreen";
 import Colors from "./constants/Colors";
 import GameOverScreen from "./screens/GameOverScreen";
 import { useFonts } from "expo-font";
-import * as SplashScreen from 'expo-splash-screen';
+import * as SplashScreen from "expo-splash-screen";
 
 export default function App() {
   const [userNumber, setUserNumber] = useState();

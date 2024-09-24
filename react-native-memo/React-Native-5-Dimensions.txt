@@ -4,6 +4,9 @@
 minWidth(minHeight) : n => 최소 이정도는 갖겠다.
 maxWidth(maxHeight) : n => 최대 이정도만 갖겠다.
 
+※ maxWidth : 80%, width : 90% 라면 width은 부모에 맞춰서 90% 비율로 작아지지만 maxWidth은 고정된 값이라 부모의 80%
+이하로 내려가지 않습니다.
+
 
 2. Dimensions API
 정의 : Dimensions API는 JS 객체로 RN을 렌더링하고 있는 화면의 크기, 높이, Scale, 폰트 사이즈등을 알려주는 API이다.
@@ -11,9 +14,10 @@ maxWidth(maxHeight) : n => 최대 이정도만 갖겠다.
 특징
 2-1. const deviceWidth = Dimensions.get('window').width; 
 => 리액트 네이티브를 렌더링하고 있는 기기의 넓이를 반환한다.
-=> get('window' or 'screen') => ios에서는 화면 전체를 의미하지만 android에서는 window는 상태표시줄을 제외한 화면을 의미한다.
 2-2. deviceWidth을 통해서 StyleSheet 처리를 하면 동적인 화면 설정이 가능하다.
 => 이 떄 삼항연산자를 사용하여 처리가 유용하다.
+2-3. Dimensions.get('window') : 상태바와 내비게이션 바를 제외한 영역을 의미합니다.
+2-4. Dimensions.get('screen') : 상태바와 내비게이션 바를 모두 포함한 영역을 의미합니다.
 
 
 3. 세로/가로 화면 설정
@@ -21,7 +25,8 @@ app.json의 "orientation": "portrait"이 기본 설정이다.
 => 세로 고정
 
 orientation을 defulat나 landscape로 변경하면 가로 설정이 가능하다.
-=> default는 자유롭게 변경, landscape는 가로 고정
+=> defalut의 경우 휴대폰의 위치가 변경되면 가로, 세로 설정이 자동으로 이루어집니다.
+=> landscape의 경우 가로 고정입니다.
 
 Dimensions API는 가로 => 세로, 세로 => 가로가 되었을 떄 다시 실행하지 않는다.
 처음 가로 모드로 Dimensions API가 계산되어 CSS가 적용되면 세로 모드일 떄의 적용은 안되는 것
@@ -38,8 +43,8 @@ style={[styles.root, {marginTop : marginTopDistance}]};
 
 5. IOS의 가로 모드 문제점 해결하기
 IOS가 가로 모드 일 떄 textInput의 key-pad가 UI 전체를 덮고 key-pad을 닫을 수가 없는 오류가 발생한다.
-KeyboardAvoidingView core-component을 통해 key-pad가 UI를 덮지 않게 하고
-ScrollView을 통해 화면을 스크롤링하여 요소를 적절히 배치할 수 있다.
+=> KeyboardAvoidView를 통해 IOS의 UI 전체를 덮지 않도록 한다.
+=> ScrollView를 사용해서 KeyboardAvoidView와 textInput을 스크롤할 수 있게 만들 수 있다.
 
 
 6. 가로-세로 styling
@@ -60,8 +65,9 @@ Platform.OS === 'android'('ios','web'..) ? 20 : 40
 
 8-2. Platform.select({android : value, ios : value})를 통해서 쉽게 값을 전달할 수 도 있다.
 
-8-3. 컴포넌트 파일이나 일반 JS 파일 확장자를 com.ios.js/ com.android.js로 규정하여 플랫폼마다 적용할 컴포넌트를
-생성할 수 도 있다.
+8-3. 컴포넌트 파일이름이나 일반 js 파일이름에
+component.ios.js or component.android.js로 설정하면 앱이 실행될 떄 각 플랫폼에 맞는 파일만 실행합니다.
+
 
 
 9. Status Bar styling

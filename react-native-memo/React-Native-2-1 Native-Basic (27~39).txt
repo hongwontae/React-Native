@@ -76,7 +76,8 @@ borderRadius의 경우 Text tag에 styles로 적용하게 되면 ios의 경우 �
 7. ScrollView
 ScrollView tag는 해당 영역에서 요소들이 height을 넘어가면 스크롤 효과를 주는 core-component이다.
 
-7-1. ScrollView는 flex로 공간을 차지할 떄 움직임이 다르기 떄문에 view로 감싸서 flex처리를 해야한다.
+7-1. *** ScrollView는 flex로 공간을 차지할 떄 움직임이 다르기 떄문에 view로 감싸서 flex처리를 해야한다. ***
+=> 이 형식을 지켜줘야 레이아웃 처리가 쉬워진다.
 7-2. ScrollView는 IOS나 android에 따라 사용할 수 있는 프로퍼티나 default 값이 다르기 떄문에 개발시 고려해야 한다.
 7-3. ScrollView는 렌더링이 트리거되면 모든걸 렌더링하기 떄문에 map을 주로 사용하여 자식들을 표현한다.
 7-4. ScrollView는 모든 자식 항목을 렌더링한다. (모든 항목이 보이지 않더라도 렌더링을 해버린다.)

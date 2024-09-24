@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "pr-3",
-    "slug": "pr-3",
+    "name": "rn-demension-pratice",
+    "slug": "rn-demension-pratice",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -11,9 +11,6 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
     "ios": {
       "supportsTablet": true
     },
