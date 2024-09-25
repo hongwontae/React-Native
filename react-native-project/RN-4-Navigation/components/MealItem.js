@@ -1,14 +1,14 @@
 import { Text, View } from "react-native";
 
-function FavoriteScreen(){
+function MealItem({title}){
 
     return(
         <>
             <View>
-                <Text>Good Game</Text>
+                <Text>{title}</Text>
             </View>
         </>
     )
 }
 
-export default FavoriteScreen;
+export default MealItem;

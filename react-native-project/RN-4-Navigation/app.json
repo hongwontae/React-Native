@@ -1,20 +1,17 @@
 {
   "expo": {
-    "name": "react-native-4-navigationAPI",
-    "slug": "react-native-4-navigationAPI",
+    "name": "RN-4-Navigation",
+    "slug": "RN-4-Navigation",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
     "backgroundColor" : "#24180f",
+    "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
     "ios": {
       "supportsTablet": true
     },
