@@ -7,6 +7,7 @@ import {
   Text,
   View,
 } from "react-native";
+import MealDetails from "./MealDetails";
 
 function MealItem({id, title, imageUrl, duration, complexity, affordability }) {
 
@@ -32,13 +33,7 @@ function MealItem({id, title, imageUrl, duration, complexity, affordability }) {
             <Image style={styles.imageBox} source={{ uri: imageUrl }}></Image>
             <Text style={styles.titleStyle}>{title}</Text>
           </View>
-          <View style={styles.details}>
-            <Text style={styles.detailsItem}>{duration}m</Text>
-            <Text style={styles.detailsItem}>{complexity.toUpperCase()}</Text>
-            <Text style={styles.detailsItem}>
-              {affordability.toUpperCase()}
-            </Text>
-          </View>
+            <MealDetails duration={duration} affordability={affordability} complexity={complexity}></MealDetails>
         </Pressable>
       </View>
     </>
@@ -69,16 +64,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     margin: 8,
   },
-  details: {
-    flexDirection: "row",
-    alignItems: "center",
-    padding: 8,
-    justifyContent: "center",
-  },
-  detailsItem: {
-    marginHorizontal: 4,
-    fontSize: 12,
-  },
+
   iosClickEvent : {
     opacity : 0.3
   }
