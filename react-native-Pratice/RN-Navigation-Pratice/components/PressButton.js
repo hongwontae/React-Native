@@ -1,11 +1,11 @@
 import { Pressable, StyleSheet, Text, View } from "react-native";
 
-function PressButton({press}) {
+function PressButton({press, children}) {
   return (
     <>
       <View >
         <Pressable style={styles.container} onPress={press} android_ripple={{color : 'white'}}>
-            <Text>Move One</Text>
+            <Text style={styles.textStyle}>{children}</Text>
         </Pressable>
       </View>
     </>
@@ -19,6 +19,9 @@ const styles = StyleSheet.create({
         borderWidth : 2,
         padding : 10,
         backgroundColor : 'red',
-        overflow : 'hidden'
+        overflow : 'hidden',
+    },
+    textStyle : {
+      textAlign : 'center'
     }
 })

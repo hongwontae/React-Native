@@ -3,7 +3,6 @@ import PressButton from "../components/PressButton";
 
 function StartScreen({ route, navigation }) {
   function pressHandler() {
-    console.log("press");
     navigation.navigate("detail-screen", {
       dummyData: {
         id : 1,
@@ -15,11 +14,16 @@ function StartScreen({ route, navigation }) {
     });
   }
 
+  function bottomPressHandler(){
+    navigation.navigate('testBottom')
+  }
+
   return (
     <>
       <View style={styles.container}>
         <Text>Start Screen</Text>
-        <PressButton press={pressHandler}></PressButton>
+        <PressButton press={pressHandler}>Move Detail</PressButton>
+        <PressButton press={bottomPressHandler}>Move Bottom Tabs</PressButton>
       </View>
     </>
   );
