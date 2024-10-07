@@ -1,0 +1,15 @@
+1. 장치에서 지리적 위치 정보를 읽고, 현재 위치를 폴링하거나, 위치 업데이트 이벤트를 구독할 수 있는 기능을
+제공하는 라이브러리입니다.
+
+2. useForegroundPermissions
+=> 앱이 화면에 보이는 상태에서 위치 권한을 관리하는 훅입니다.
+
+3. useBackgroundPermissions
+=> 앱이 백그라운드에서 위치 권한을 관리하는 훅입니다.
+=> 백그라운드 위치 추적 : 운동 기록, 위치 기반 알림 앱...
+
+4. getCurrentPositionAsync
+=> 현재 위치 데이터를 반환합니다.
+
+5. getForegroundPermissionsAsync
+=> 위치 데이터에 접근하기 위한 권한 상태만 확인합니다.

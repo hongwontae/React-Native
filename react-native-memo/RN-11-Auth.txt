@@ -1,0 +1,22 @@
+1. navigation.replace()는 다른 스크린으로 이동하는 메서드지만 이전 스크린 상태는 제거됩니다. 또한 뒤로 가기가 불가능해집니다.
+
+
+2. Secure Storage
+2-1. 운영체제(OS)가 제공하는 보안 저장소입니다.
+2-2. npm install react-native-keychain 라이브러리로 사용할 수 있습니다.
+=> 그러나 expo로 만들어진 앱은 expo-secure-store를 사용해야 Secure Storage를 사용할 수 있습니다.
+=> EXPO에서 지원하는 API만 사용할 수 있기 떄문입니다.
+=> 두 라이브러리 다 Secure Storage에 데이터를 저장하고 가져오는 라이브러리입니다.
+
+
+3. state를 사용해서 <Stack.navigator>를 변경해주면 자연스럽게 화면전환이 일어납니다.
+
+
+4. token을 보낼 때 header에 담아서 보냅니다.
+4-1. headers : {
+    'Authorization' : 'Bearer ' + token
+}
+4-2. 서버에서 req.get('Authorization').split(' ')[1]으로 받습니다.
+
+
+5. res.json() => response.json() 으로 이루어지기 떄문에 동일한 타입으로 받을 수 있다.
