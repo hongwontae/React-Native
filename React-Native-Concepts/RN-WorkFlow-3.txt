@@ -1,0 +1,10 @@
+1. Expo Managed Workflow
+=> 간편한 설정, Expo SDK, Expo-go 앱 사용, 제한된 네이티브 코드 수정
+
+2. Expo Bare Workflow
+=> 네이티브 코드 접근 가능(java, swift..), Expo SDK, 더 많은 설정, Expo go 사용불가
+
+
+3. React Native CLI
+=> 최대 제어권(네이티브 코드 완전 제어), Expo SDK x, 더 복잡한 설정
+

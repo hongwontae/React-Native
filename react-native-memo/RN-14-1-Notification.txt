@@ -1,0 +1,51 @@
+1. 로컬 알림
+1-1. 설치된 앱에 의해서 트리거되는 알림을 의미합니다.
+1-2. 어떤 유저나 다른 장치가 보내는 것이 아니고 앱이 필요에 의해 알림을 전송하는 기능입니다.
+=> alarm clock, todo, reminder...
+
+
+2. 로컬 알림 설정
+2-1. plugins [
+    [
+        "expo-notifications",
+        {
+            "icon" : "..path",
+            "color" : "...",
+        }
+    ]
+]
+
+3. expo-notifications method
+3-1. getPermissionsAsync : 알림 권한 정보를 얻는 메서드입니다. (알림을 전송하기 위해서는 권한을 받아야 합니다.)
+3-2. requestPermissionsAsync : 알림 권한 승인 요청을 보내는 메서드입니다.
+3-3. permissionRequestHandler : 알림 설정 객체입니다. 인자로 객체를 받고 content(알림 제목, 컨텐츠..), trigger(알림 전송
+시간), identifier : 식별자
+3-4. setNotificationHandler : 앱이 포그라운드에 있을 때 수신한 알림을 처리하는 방식을 설정합니다. 인자로 객체를 받습니다.
+=> setNotificationHandler({
+    handleNotification : ()=>{
+        return {
+            shouldPlaySound : false,
+            shouldSetBadge : false,
+            shouldShowAlert : true
+        }
+    }, 알림을 어떻게 받을지 설정하는 객체입니다.
+    handlerError : ()=>{
+
+    }, 알림 에러 핸들러
+    handleSuccess : ()=>{
+
+    } 알림 성공 핸들러
+})
+
+3-5. addNotificationReceivedListener : 앱이 실행 중일 떄 알림을 수신하면 그 알림을 처리하는데 사용합니다.
+1. useEffect에서 해당 리스너를 걸고 클린 업 함수에서 remove를 호출하여 제거하여 메모리 누수를 관리하는 흐름을 코드를
+작성합니다.
+2. addNotificationReceivedListener()은 인자로 콜백 함수를 받고 콜백 함수 인자에 알림 데이터와 다양한 메서드가 존재합니다.
+3. addNotificationReceivedListener의 return 값으로 remove를 호출하여 언마운트시 리스너를 해제할 수 있습니다.
+
+
+*** setNotificationHandler는 전역 알림 처리기로 한 번 설정하면 앱 종료까지 계속 적용됩니다. useEffect에서 사용 x
+*** addNotificationReceivedListener는 특정 컴포넌트에서 알림을 처리할 떄마다 설정하고 해제해줘야 합니다.
+
+3-6. 
+

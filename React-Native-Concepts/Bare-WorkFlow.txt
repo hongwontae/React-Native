@@ -1,0 +1,22 @@
+1. Bare-WorkFlow
+1-1. android, ios 폴더가 존재하고 안에 네이티브 코드가 존재합니다. (설정 파일이나 권한에 관련된 파일들입니다.)
+1-2. index.js 파일이 존재합니다. => app.js가 루트 컴포넌트라는 것을 앱에 알려주는 역할입니다.
+1-3. android, ios 폴더가 설정을 처리하기 때문에 app.json 코드가 작아집니다.
+
+
+2. expo init
+=> 마지막에 존재하는 minimal을 선택합니다.
+=> bare workflow에 해당하는 애플리케이션이 만들어집니다.
+
+
+3. android studio - bare workflw connect
+3-1. 환경 변수를 설정해야 합니다. 
+(시스템 변수에 ANDROID_HOME, 안드로이드 SDK 위치를 전달합니다.)
+(시스템 변수 PATH에 C:\Users\dnjsx\AppData\Local\Android\Sdk\platform-tools, 
+C:\Users\dnjsx\AppData\Local\Android\Sdk\tools, C:\Users\dnjsx\AppData\Local\Android\Sdk\emulator를 전달합니다.)
+3-2. 사양에 맞는 Android Device Manager를 선택하고 실행합니다.
+3-3. bare workflow 애플리케이션에서 npm run android나 ios를 명령어로 입력하고 빌드가 완료되면 a, i를 눌러 연동시킵니다.
+
+
+4. expo eject
+=> 해당 명령어를 실행하면 위치된 managed expo app이 bare expo workflw로 변경됩니다.

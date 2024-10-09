@@ -1,0 +1,5 @@
+1. npx react-native init proejectName (or npm install -g react-native-cli)
+=> react-native cli를 설치하는 명령어입니다.
+
+
+2. bare workflow에서 설정을 완료했다면 react-native cli 설정은 따로 필요없습니다.

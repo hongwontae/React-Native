@@ -1,0 +1,25 @@
+1. 앱 퍼블리싱
+1-1. google app store에 앱을 올리는 것을 의미합니다.
+
+1-2. expo가 포함된 프로젝트는 expo's cloud service를 통해 android, ios 모두 빌드할 수 있습니다.
+=> 앱 빌드가 완료되면 앱스토어에 제출할 수 있습니다.
+
+1-3. expo가 없는 프로젝트는 자신의 기기에서 빌드해야 합니다. mac이 아니라면 ios는 빌드할 수 없습니다.
+=> 빌드가 완료되면 앱스토어에 제출할 수 있습니다.
+
+
+2. Configuring For Production
+=> 권한 설정, 앱 이름, 환경 변수, icon, Splash Screen...
+
+
+3. expo 프로젝트 빌드 전 설정
+3-1. name : 앱 이름
+3-2. version : 앱 전체를 아우르는 version을 의미합니다.
+3-3. ios : ios에 관련된 설정 (buildNumber, supportsTablet.. ios만의 설정이 존재합니다.)
+3-4. android : android에 관련된 설정 (versionCode, adaptiveIcon.. android만의 설정이 존재합니다.)
+3-5. icon : expo 빌드로 여러 해상도의 icon을 만들어서 제공해줍니다.
+3-6. splash screen : 초기 진입 시 앱이 렌더링과 데이터를 가져오기 전에 보여주는 화면입니다.
+
+
+4. react-native cli 퍼블리싱
+=> react native 공식 문서를 따르면 된다.
